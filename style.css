@@ -1,3 +1,6 @@
+
+
+
 /* Globální reset pro správu šířek */
 * {
     box-sizing: border-box; /* ZAJIŠTĚNÍ: Padding a border se počítá DO šířky */
@@ -42,7 +45,6 @@ h1, h2, h3, h4 {
 
 /* Styly pro NOVOU IKONKU SVG v hlavičce */
 .header-logo-svg {
-    /* ZVÝŠENÍ PRIORITY: Mělo by to vyřešit cache/prioritu */
     width: 45px !important; 
     height: 45px !important; 
     margin-right: 12px; 
@@ -412,9 +414,20 @@ section {
     margin-right: 15px;
 }
 
-.contact-text {
-    font-weight: 500;
+/* Styly pro nově přidanou adresu */
+.contact-address {
+    cursor: default; 
 }
+
+.contact-address:hover {
+    color: #f0f0f0; 
+}
+
+.contact-address .contact-text {
+    text-align: left; 
+    line-height: 1.2; 
+}
+
 
 /* Patička */
 .main-footer {
@@ -444,7 +457,7 @@ section {
     color: #ccc;
 }
 
-/* --- HAMBURGER MENU STYLY --- */
+/* --- HAMBURger MENU STYLY --- */
 
 .hamburger-menu {
     display: none; 
@@ -594,4 +607,3 @@ section {
 section[id] {
     scroll-margin-top: 80px;
 }
-
