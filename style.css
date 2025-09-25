@@ -47,14 +47,16 @@ h1, h2, h3, h4 {
     text-align: left;
 }
 
+/* NOVÝ STYL PRO TAGLINE - pro text 'Projekty' */
 .logo-tagline {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.85rem;
-    color: #999;
+    font-family: 'Playfair Display', serif; /* Stejné písmo jako h1 */
+    font-size: 1.6rem; /* Stejná velikost jako h1 */
+    color: #4db6ac; /* Stejná barva jako h1 */
+    font-weight: 700; /* Tučné, jako h1 */
     margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    line-height: 1; /* Kompaktnější zobrazení */
 }
+
 
 .logo h1 {
     font-size: 1.6rem;
@@ -459,7 +461,7 @@ section {
 
 @media (max-width: 768px) {
     
-    /* ÚPRAVY PRO HAMBURGER MENU (Optimalizace rozteče pro mobily a oprava výšky) */
+    /* ÚPRAVY PRO HAMBURGER MENU (Oprava výšky pomocí max-height) */
     .main-header {
         justify-content: space-between; 
         flex-direction: row; 
@@ -475,10 +477,9 @@ section {
         top: 85px; 
         left: 0;
         width: 100%;
-        /* ZÁSADNÍ OPRAVA: Používáme max-height 0 pro skrytí a animaci */
-        max-height: 0;
+        max-height: 0; /* SKRYTÍ: Animujeme max-height z 0 */
         overflow: hidden;
-        transition: max-height 0.3s ease-in-out; 
+        transition: max-height 0.3s ease-in-out; /* Animujeme max-height */
         background-color: #212121;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         z-index: 1000;
@@ -486,7 +487,7 @@ section {
     }
 
     .main-nav.active {
-        /* ZÁSADNÍ OPRAVA: Velká hodnota max-height zajistí, že se veškerý obsah menu zobrazí */
+        /* ZOBRAZENÍ: Velká hodnota max-height */
         max-height: 500px; 
         padding-bottom: 5px; 
     }
