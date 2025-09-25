@@ -34,16 +34,18 @@ h1, h2, h3, h4 {
 /* Styly pro logo */
 .logo-link {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row; 
+    align-items: center; /* Vše zarovnáme na svislý střed */
     text-decoration: none;
-    text-align: left;
+    padding: 5px 0; /* Přidáme malý padding, aby se logo neodlepovalo od okraje */
 }
 
-.logo-img {
-    width: 45px;
-    height: auto;
-    margin-bottom: 5px;
+/* Styly pro nové KREATIVNĚJŠÍ SVG logo v hlavičce */
+.header-logo-svg {
+    width: 45px; /* ZVĚTŠENO: pro lepší viditelnost abstraktního tvaru */
+    height: 45px; /* ZVĚTŠENO: pro lepší viditelnost abstraktního tvaru */
+    margin-right: 12px; /* Mírně větší mezera */
+    flex-shrink: 0; 
 }
 
 .logo-text {
@@ -171,16 +173,16 @@ section {
 
 /* Stylování ikonek služeb */
 .service-icon {
-    font-size: 2.5rem; /* Zvětšení ikony */
-    color: #4db6ac; /* Tyrkysová barva */
-    margin-bottom: 15px; /* Mezera pod ikonou */
-    display: block; /* Zajištění, že ikonka je na samostatném řádku */
+    font-size: 2.5rem; 
+    color: #4db6ac; 
+    margin-bottom: 15px; 
+    display: block; 
     transition: transform 0.3s ease;
 }
 
 .sluzba-card:hover .service-icon {
-    color: #f0f0f0; /* Změna barvy na bílou při najetí */
-    transform: scale(1.1); /* Mírné zvětšení ikony */
+    color: #f0f0f0; 
+    transform: scale(1.1); 
 }
 
 .sluzba-card h4 {
@@ -342,7 +344,7 @@ section {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     border: 1px solid #333;
-    margin: 0; /* Zajištěno nulové vnější odsazení */
+    margin: 0; 
 }
 
 .contact-photo {
@@ -363,7 +365,7 @@ section {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     border: 1px solid #333;
-    margin: 0; /* Zajištěno nulové vnější odsazení */
+    margin: 0; 
 }
 
 .kontakt-form input, .kontakt-form textarea {
@@ -510,7 +512,6 @@ section {
         overflow: hidden;
         transition: max-height 0.3s ease-in-out; 
         background-color: #212121;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         z-index: 1000;
         text-align: center; 
     }
@@ -544,18 +545,18 @@ section {
     
     /* ZAJIŠTĚNÍ SPRÁVNÉHO ODSADZENÍ KONTAKTNÍ SEKCIE NA MOBILU */
     .kontakt-section {
-        padding: 40px 0; /* Odebrán boční padding */
+        padding: 40px 0; 
     }
     
     .kontakt-container {
-        padding: 0 15px; /* Přidán bezpečný boční padding pro celý kontejner */
+        padding: 0 15px; 
         width: 100%;
         max-width: 100%;
     }
     
     .kontakt-info, .kontakt-form {
         margin: 10px 0;
-        padding: 20px 15px; /* Snížené vnitřní odsazení */
+        padding: 20px 15px; 
         width: 100%;
         max-width: 100%;
     }
@@ -592,5 +593,6 @@ section {
 section[id] {
     scroll-margin-top: 80px;
 }
+
 
 
