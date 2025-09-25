@@ -1,3 +1,8 @@
+/* Globální reset pro správu šířek */
+* {
+    box-sizing: border-box; /* ZAJIŠTĚNÍ: Padding a border se počítá DO šířky */
+}
+
 /* Základní styly pro tělo stránky a písmo */
 body {
     font-family: 'Montserrat', sans-serif;
@@ -47,7 +52,7 @@ h1, h2, h3, h4 {
     text-align: left;
 }
 
-/* NOVÝ STYL PRO TAGLINE - pro text 'Projekty' */
+/* STYL PRO TAGLINE - pro text 'Projekty' */
 .logo-tagline {
     font-family: 'Playfair Display', serif;
     font-size: 1.6rem;
@@ -306,20 +311,18 @@ section {
     flex-wrap: wrap;
 }
 
-/* OPRAVA: max-width na 100% a box-sizing */
+/* OPRAVA: Odstranění min-width, box-sizing je nyní globální */
 .kontakt-info {
     display: flex;
     flex-direction: column;
     align-items: center;
     flex: 1;
-    min-width: 300px;
-    max-width: 100%; 
+    max-width: 450px; 
     background-color: #212121;
     padding: 40px 20px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     border: 1px solid #333;
-    box-sizing: border-box; 
 }
 
 .contact-photo {
@@ -331,18 +334,16 @@ section {
     border: 3px solid #4db6ac;
 }
 
-/* OPRAVA: max-width na 100% a box-sizing */
+/* OPRAVA: Odstranění min-width, box-sizing je nyní globální */
 .kontakt-form {
     flex: 1;
-    min-width: 300px;
-    max-width: 100%; 
+    max-width: 600px; 
     text-align: left;
     background-color: #212121;
     padding: 40px 20px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     border: 1px solid #333;
-    box-sizing: border-box; 
 }
 
 .kontakt-form input, .kontakt-form textarea {
@@ -515,21 +516,18 @@ section {
         font-size: 1.0rem; 
     }
     
-    /* OPRAVA PŘESAHU KONTAKTNÍHO FORMULÁŘE NA MOBILU */
+    /* ZAJIŠTĚNÍ SPRÁVNÉHO ODSADZENÍ KONTAKTNÍ SEKCIE NA MOBILU */
     .kontakt-section {
-        padding: 80px 20px; /* Zvýšení horizontálního odsazení sekce */
+        padding: 40px 20px; /* Redukujeme vertikální padding pro mobil */
     }
     
-    .kontakt-container {
-        padding: 0; /* Odstraní extra padding, protože ho má sekce */
+    .kontakt-info, .kontakt-form {
+        /* EXPLICITNÍ SNÍŽENÍ VNITŘNÍHO ODSADZENÍ pro mobil */
+        padding: 20px 10px; 
         width: 100%;
         max-width: 100%;
     }
     
-    .kontakt-info, .kontakt-form {
-        min-width: unset; /* Odstraní pevnou min. šířku */
-        width: 100%;
-    }
     /* KONEC OPRAV */
 
 
