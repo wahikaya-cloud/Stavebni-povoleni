@@ -49,12 +49,12 @@ h1, h2, h3, h4 {
 
 /* NOVÝ STYL PRO TAGLINE - pro text 'Projekty' */
 .logo-tagline {
-    font-family: 'Playfair Display', serif; /* Stejné písmo jako h1 */
-    font-size: 1.6rem; /* Stejná velikost jako h1 */
-    color: #4db6ac; /* Stejná barva jako h1 */
-    font-weight: 700; /* Tučné, jako h1 */
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: #4db6ac;
+    font-weight: 700;
     margin: 0;
-    line-height: 1; /* Kompaktnější zobrazení */
+    line-height: 1;
 }
 
 
@@ -306,18 +306,20 @@ section {
     flex-wrap: wrap;
 }
 
+/* OPRAVA: max-width na 100% a box-sizing */
 .kontakt-info {
     display: flex;
     flex-direction: column;
     align-items: center;
     flex: 1;
     min-width: 300px;
-    max-width: 450px;
+    max-width: 100%; 
     background-color: #212121;
     padding: 40px 20px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     border: 1px solid #333;
+    box-sizing: border-box; 
 }
 
 .contact-photo {
@@ -329,16 +331,18 @@ section {
     border: 3px solid #4db6ac;
 }
 
+/* OPRAVA: max-width na 100% a box-sizing */
 .kontakt-form {
     flex: 1;
     min-width: 300px;
-    max-width: 600px;
+    max-width: 100%; 
     text-align: left;
     background-color: #212121;
     padding: 40px 20px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     border: 1px solid #333;
+    box-sizing: border-box; 
 }
 
 .kontakt-form input, .kontakt-form textarea {
@@ -419,7 +423,7 @@ section {
 /* --- HAMBURGER MENU STYLY --- */
 
 .hamburger-menu {
-    display: none; /* Skryto na desktopu */
+    display: none; 
     background: none;
     border: none;
     cursor: pointer;
@@ -432,11 +436,10 @@ section {
     width: 25px;
     height: 3px;
     margin: 5px 0;
-    background-color: #4db6ac; /* Barva čáry */
+    background-color: #4db6ac; 
     transition: all 0.3s ease;
 }
 
-/* Třída pro animaci kříže */
 .hamburger-menu.active .bar:nth-child(2) {
     opacity: 0;
 }
@@ -461,25 +464,24 @@ section {
 
 @media (max-width: 768px) {
     
-    /* ÚPRAVY PRO HAMBURGER MENU (Oprava výšky pomocí max-height) */
+    /* ÚPRAVY PRO HAMBURGER MENU */
     .main-header {
         justify-content: space-between; 
         flex-direction: row; 
     }
 
     .hamburger-menu {
-        display: block; /* Zobrazit hamburger menu na mobilu */
+        display: block; 
     }
 
     .main-nav {
-        /* Ponecháme skryté */
         position: absolute;
         top: 85px; 
         left: 0;
         width: 100%;
-        max-height: 0; /* SKRYTÍ: Animujeme max-height z 0 */
+        max-height: 0; 
         overflow: hidden;
-        transition: max-height 0.3s ease-in-out; /* Animujeme max-height */
+        transition: max-height 0.3s ease-in-out; 
         background-color: #212121;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         z-index: 1000;
@@ -487,19 +489,18 @@ section {
     }
 
     .main-nav.active {
-        /* ZOBRAZENÍ: Velká hodnota max-height */
         max-height: 500px; 
         padding-bottom: 5px; 
     }
 
     .main-nav ul {
-        flex-direction: column; /* Položky menu pod sebou */
+        flex-direction: column; 
         align-items: center;
         margin-top: 10px;
     }
 
     .main-nav li {
-        margin: 5px 0; /* Optimalizovaná mezera */
+        margin: 5px 0; 
     }
     
     .main-nav a {
@@ -508,14 +509,28 @@ section {
         display: block; 
     }
 
-    /* Optimalizace pro tlačítko Kontakt (CTA) v mobilním menu */
     .nav-cta {
         padding: 6px 14px; 
         font-weight: 500; 
         font-size: 1.0rem; 
     }
     
-    /* KONEC ÚPRAV PRO HAMBURGER MENU */
+    /* OPRAVA PŘESAHU KONTAKTNÍHO FORMULÁŘE NA MOBILU */
+    .kontakt-section {
+        padding: 80px 20px; /* Zvýšení horizontálního odsazení sekce */
+    }
+    
+    .kontakt-container {
+        padding: 0; /* Odstraní extra padding, protože ho má sekce */
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .kontakt-info, .kontakt-form {
+        min-width: unset; /* Odstraní pevnou min. šířku */
+        width: 100%;
+    }
+    /* KONEC OPRAV */
 
 
     .hero-title {
