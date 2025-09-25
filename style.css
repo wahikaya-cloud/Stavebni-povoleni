@@ -169,6 +169,25 @@ section {
     margin-bottom: 50px;
 }
 
+/* Stylování ikonek služeb */
+.service-icon {
+    font-size: 2.5rem; /* Zvětšení ikony */
+    color: #4db6ac; /* Tyrkysová barva */
+    margin-bottom: 15px; /* Mezera pod ikonou */
+    display: block; /* Zajištění, že ikonka je na samostatném řádku */
+    transition: transform 0.3s ease;
+}
+
+.sluzba-card:hover .service-icon {
+    color: #f0f0f0; /* Změna barvy na bílou při najetí */
+    transform: scale(1.1); /* Mírné zvětšení ikony */
+}
+
+.sluzba-card h4 {
+    margin-top: 0; 
+}
+
+
 /* Sekce služeb a proces */
 .sluzby-grid, .proces-steps {
     display: grid;
@@ -311,7 +330,7 @@ section {
     flex-wrap: wrap;
 }
 
-/* OPRAVA: Obecné styly pro kontaktní bloky */
+/* Opravené styly pro kontaktní bloky (desktop) */
 .kontakt-info {
     display: flex;
     flex-direction: column;
@@ -323,7 +342,7 @@ section {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     border: 1px solid #333;
-    margin: 0; /* ZAJIŠTĚNÍ: Žádný vnější margin */
+    margin: 0; /* Zajištěno nulové vnější odsazení */
 }
 
 .contact-photo {
@@ -344,7 +363,7 @@ section {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     border: 1px solid #333;
-    margin: 0; /* ZAJIŠTĚNÍ: Žádný vnější margin */
+    margin: 0; /* Zajištěno nulové vnější odsazení */
 }
 
 .kontakt-form input, .kontakt-form textarea {
@@ -461,12 +480,11 @@ section {
     .kontakt-container {
         flex-direction: column;
         align-items: center;
-        gap: 20px; /* Redukujeme mezeru mezi bloky na mobilu */
+        gap: 20px; 
     }
     
-    /* ZAJIŠTĚNÍ, ŽE NA TABLETU (pod 992px) SE NEPRŮŘE FORMULÁŘ */
     .kontakt-info, .kontakt-form {
-        max-width: 90%; /* Omezíme šířku, aby se vešla s bočním paddingem */
+        max-width: 90%; 
         margin: 0;
     }
 }
@@ -525,21 +543,19 @@ section {
     }
     
     /* ZAJIŠTĚNÍ SPRÁVNÉHO ODSADZENÍ KONTAKTNÍ SEKCIE NA MOBILU */
-    /* Největší šance na opravu! */
     .kontakt-section {
-        padding: 40px 0; /* Odebereme boční padding ze sekce */
+        padding: 40px 0; /* Odebrán boční padding */
     }
     
     .kontakt-container {
-        /* Přidáme vnější bezpečné odsazení na samotný kontejner pro mobil */
-        padding: 0 15px; 
+        padding: 0 15px; /* Přidán bezpečný boční padding pro celý kontejner */
         width: 100%;
         max-width: 100%;
     }
     
     .kontakt-info, .kontakt-form {
         margin: 10px 0;
-        padding: 20px 15px; /* Necháme malé vnitřní odsazení */
+        padding: 20px 15px; /* Snížené vnitřní odsazení */
         width: 100%;
         max-width: 100%;
     }
@@ -576,4 +592,5 @@ section {
 section[id] {
     scroll-margin-top: 80px;
 }
+
 
