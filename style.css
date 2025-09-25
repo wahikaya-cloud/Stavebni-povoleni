@@ -414,6 +414,41 @@ section {
     color: #ccc;
 }
 
+/* --- HAMBURGER MENU STYLY --- */
+
+.hamburger-menu {
+    display: none; /* Skryto na desktopu */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1050;
+}
+
+.hamburger-menu .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: #4db6ac; /* Barva čáry */
+    transition: all 0.3s ease;
+}
+
+/* Třída pro animaci kříže */
+.hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-menu.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* --- KONEC HAMBURGER MENU STYLŮ --- */
+
 /* Responzivní design */
 @media (max-width: 992px) {
     .kontakt-container {
@@ -423,15 +458,64 @@ section {
 }
 
 @media (max-width: 768px) {
+    
+    /* ÚPRAVY PRO HAMBURGER MENU (Optimalizace rozteče pro mobily) */
     .main-header {
-        flex-direction: column;
-        text-align: center;
+        justify-content: space-between; 
+        flex-direction: row; 
+    }
+
+    .hamburger-menu {
+        display: block; /* Zobrazit hamburger menu na mobilu */
+    }
+
+    .main-nav {
+        /* Ponecháme skryté, připravené k rozbalení */
+        position: absolute;
+        top: 85px; 
+        left: 0;
+        width: 100%;
+        height: 0; 
+        background-color: #212121;
+        overflow: hidden;
+        transition: height 0.3s ease-in-out;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        text-align: center; 
+    }
+
+    .main-nav.active {
+        /* Nastavení výšky a odsazení pro kompaktní zobrazení */
+        height: 250px; 
+        max-height: 500px;
+        padding-bottom: 5px; 
     }
 
     .main-nav ul {
-        margin-top: 15px;
-        justify-content: center;
+        flex-direction: column; /* Položky menu pod sebou */
+        align-items: center;
+        margin-top: 10px;
     }
+
+    .main-nav li {
+        margin: 5px 0; /* ZÁSADNÍ ÚPRAVA: Snížení vertikálních mezer */
+    }
+    
+    .main-nav a {
+        font-size: 1.1rem; /* ZÁSADNÍ ÚPRAVA: Mírné snížení velikosti písma */
+        padding: 5px 0; /* Snížení vnitřního odsazení odkazů */
+        display: block; 
+    }
+
+    /* Optimalizace pro tlačítko Kontakt (CTA) v mobilním menu */
+    .nav-cta {
+        padding: 6px 14px; /* Menší vnitřní odsazení */
+        font-weight: 500; 
+        font-size: 1.0rem; /* Menší písmo */
+    }
+    
+    /* KONEC ÚPRAV PRO HAMBURGER MENU */
+
 
     .hero-title {
         font-size: 3rem;
