@@ -40,11 +40,12 @@ h1, h2, h3, h4 {
     padding: 5px 0; /* Přidáme malý padding, aby se logo neodlepovalo od okraje */
 }
 
-/* Styly pro nové KREATIVNĚJŠÍ SVG logo v hlavičce */
+/* Styly pro NOVOU IKONKU SVG v hlavičce */
 .header-logo-svg {
-    width: 45px; /* ZVĚTŠENO: pro lepší viditelnost abstraktního tvaru */
-    height: 45px; /* ZVĚTŠENO: pro lepší viditelnost abstraktního tvaru */
-    margin-right: 12px; /* Mírně větší mezera */
+    /* ZVÝŠENÍ PRIORITY: Mělo by to vyřešit cache/prioritu */
+    width: 45px !important; 
+    height: 45px !important; 
+    margin-right: 12px; 
     flex-shrink: 0; 
 }
 
@@ -593,6 +594,3 @@ section {
 section[id] {
     scroll-margin-top: 80px;
 }
-
-
-
